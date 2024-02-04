@@ -1,4 +1,4 @@
-#lamdab function for general LLM dialogue
+#Amazon Lamdba function for general LLM dialogue
 
 import boto3
 import json
