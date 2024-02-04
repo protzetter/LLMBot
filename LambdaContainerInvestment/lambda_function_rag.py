@@ -81,16 +81,13 @@ def lambda_handler(event, context):
     global llm
     global retriever
     # create langchain retrievalQA
-    print('before qa')
     qa= RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever=retriever, return_source_documents=True, chain_type_kwargs=chain_type_kwargs)
-    print('after qa')
     intent_request = event
     input_transcript = intent_request['req']['question']
     intent_name = intent_request['req']['intentname']
     session_attributes = intent_request['req']['session']
     answer= qa({"query": input_transcript})
     ans=answer['result']
-    print(ans)
     ans=ans.replace('\n',' ')
     intent_request['res']['message'] = ans
     intent_request['res']['type'] = "plaintext"
