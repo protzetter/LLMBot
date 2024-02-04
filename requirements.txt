@@ -1,9 +1,0 @@
-PyYAML==6.0
-pydantic==1.10.10
-langchain==0.0.315
-boto3==1.28.78
-botocore
-opensearch-py
-requests-aws4auth
-
-
